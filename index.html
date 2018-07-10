@@ -11,45 +11,52 @@
     <meta name="generator" content="" />
 
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.0/tiny-slider.css">
+
     <title>Layout</title>
 
     <style>
+        body {
 
-        .icon img {
-            border: 1px dashed black;
-            display: inline-block;
-            margin: 20px;
-            padding: 20px;
+        }
+        section {
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
         }
     </style>
 </head>
 <body>
-    <div class="icon"><img src="rating.png"></div>
-<script>
-
-    const thumb = document.querySelector('.icon');
-    const text = "<p>Like it!</p>";
-
-    const image = document.createElement("img");
-    image.src = "https://s8.postimg.cc/y0kbq3on9/rating.png";
-
-
-    function hideElement() {
-        thumb.innerHTML = text;
-    }
-
-    function showElement() {
-        thumb.innerHTML = "";
-        thumb.appendChild(image);
-    }
-
-    thumb.addEventListener('mousemove', hideElement);
-    thumb.addEventListener('mouseleave', showElement);
-
-</script>
+    <section>
+        <div class="my-slider">
+            <div>
+                <img src="http://via.placeholder.com/400x400?text=1">
+            </div>
+            <div>
+                <img src="http://via.placeholder.com/400x400?text=2">
+            </div>
+            <div>
+                <img src="http://via.placeholder.com/400x400?text=3">
+            </div>
+            <div>
+                <img src="http://via.placeholder.com/400x400?text=4">
+            </div>
+            <div>
+                <img src="http://via.placeholder.com/400x400?text=5">
+            </div>
+        </div>
+    </section>
+    <!--[if (lt IE 9)]><script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.0/min/tiny-slider.helper.ie8.js"></script><![endif]-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.0/min/tiny-slider.js"></script>
+    <script>
+        var slider = tns({
+                "container": ".my-slider",
+                "items": 1,
+                "speed": 300,
+                "autoplay": true,
+                "autoplayHoverPause": true,
+                "autoplayTimeout": 5000
+            });
+    </script>
 </body>
 </html>
