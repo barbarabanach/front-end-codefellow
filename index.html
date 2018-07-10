@@ -11,34 +11,44 @@
     <meta name="generator" content="" />
 
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
+        crossorigin="anonymous">
     <title>Layout</title>
 
     <style>
+
+        .icon img {
+            border: 1px dashed black;
+            display: inline-block;
+            margin: 20px;
+            padding: 20px;
+        }
     </style>
 </head>
 <body>
-    <div class="numbers">0</div>
+    <div class="icon"><img src="rating.png"></div>
 <script>
 
-    const numbers = document.querySelector('.numbers');
+    const thumb = document.querySelector('.icon');
+    const text = "<p>Like it!</p>";
 
-    function setGreen() {
-        numbers.style.color = "green";
-    };
+    const image = document.createElement("img");
+    image.src = "https://s8.postimg.cc/y0kbq3on9/rating.png";
 
-    function startCounting(i) {
-          const interval = setInterval(function() {
-            numbers.innerHTML = i;
-            i++;
-            setGreen();
-            if(i >= 501) {
-                clearInterval(interval);
-            }
-        }, 1000);
-    };
 
-    startCounting(0);
+    function hideElement() {
+        thumb.innerHTML = text;
+    }
 
+    function showElement() {
+        thumb.innerHTML = "";
+        thumb.appendChild(image);
+    }
+
+    thumb.addEventListener('mousemove', hideElement);
+    thumb.addEventListener('mouseleave', showElement);
 
 </script>
 </body>
