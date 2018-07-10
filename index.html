@@ -11,52 +11,46 @@
     <meta name="generator" content="" />
 
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.0/tiny-slider.css">
-
     <title>Layout</title>
 
     <style>
-        body {
+        .odd {
+            color: blue;
+        }
 
+        .even {
+            color: red;
         }
-        section {
-            width: 400px;
-            height: 400px;
-            margin: 0 auto;
-        }
+
     </style>
 </head>
 <body>
-    <section>
-        <div class="my-slider">
-            <div>
-                <img src="http://via.placeholder.com/400x400?text=1">
-            </div>
-            <div>
-                <img src="http://via.placeholder.com/400x400?text=2">
-            </div>
-            <div>
-                <img src="http://via.placeholder.com/400x400?text=3">
-            </div>
-            <div>
-                <img src="http://via.placeholder.com/400x400?text=4">
-            </div>
-            <div>
-                <img src="http://via.placeholder.com/400x400?text=5">
-            </div>
-        </div>
-    </section>
-    <!--[if (lt IE 9)]><script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.0/min/tiny-slider.helper.ie8.js"></script><![endif]-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.0/min/tiny-slider.js"></script>
-    <script>
-        var slider = tns({
-                "container": ".my-slider",
-                "items": 1,
-                "speed": 300,
-                "autoplay": true,
-                "autoplayHoverPause": true,
-                "autoplayTimeout": 5000
-            });
-    </script>
+    <div class="boxes">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+    </div>
+
+<script>
+    
+    const numbers = document.getElementsByTagName('div');
+
+    for(let i = 0; i < numbers.length; i++) {
+        
+        if(i % 2 === 0) {
+            numbers[i].classList.add("even");
+        } else {
+            numbers[i].classList.add("odd");
+        }
+    };
+
+</script>
 </body>
 </html>
