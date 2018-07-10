@@ -11,36 +11,34 @@
     <meta name="generator" content="" />
 
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
     <title>Layout</title>
 
     <style>
-    
-        p {
-            background: red;
-            width: 50px;
-            height: 50px;
-        }
-
-        .big-box {
-            transform: scale(2,2);
-        }
-
     </style>
 </head>
 <body>
-    <p class="box"></p>
+    <div class="numbers">0</div>
 <script>
-    const box = document.querySelector('.box');
 
-        box.addEventListener('click', function makeBoxBigger() {
-            box.classList.add('big-box');
-        });
+    const numbers = document.querySelector('.numbers');
 
+    function setGreen() {
+        numbers.style.color = "green";
+    };
 
-        box.addEventListener('mouseleave', function normalSize() {
-            box.classList.remove('big-box');
-        });
+    function startCounting(i) {
+          const interval = setInterval(function() {
+            numbers.innerHTML = i;
+            i++;
+            setGreen();
+            if(i >= 501) {
+                clearInterval(interval);
+            }
+        }, 1000);
+    };
+
+    startCounting(0);
+
 
 </script>
 </body>
