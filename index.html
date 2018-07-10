@@ -11,68 +11,37 @@
     <meta name="generator" content="" />
 
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Layout</title>
+
+    <style>
+    
+        p {
+            background: red;
+            width: 50px;
+            height: 50px;
+        }
+
+        .big-box {
+            transform: scale(2,2);
+        }
+
+    </style>
 </head>
 <body>
-    <header>
-        <nav class="container">
-            <ul>
-                <li><a href="#" target="_blank">Home</a></li>
-                <li><a href="#" target="_blank">About</a></li>
-                <li><a href="#" target="_blank">Projects</a></li>
-                <li><a href="#" target="_blank">People</a></li>
-                <li><a href="#" target="_blank">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main class="grid-content container">
-        <aside class="sidebar-content">
-            <img src="http://via.placeholder.com/300x200" alt="image" title="image">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-        </aside>
-        <article class="content content-article">
-            <h1>Lorem ipsum dolor sit amet</h1>
-            <h2>Ut enim ad minim veniam</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-            non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-            ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-            dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
-            anim id est laborum
-            </p>
-            <figure>
-                <img src="http://via.placeholder.com/350x250" alt="image" title="image">
-                <figcaption>Lorem ipsum dolor sit amet</figcaption>
-            </figure>
-        </article>
-        <article class="content-article article-01">
-            <h3>Lorem ipsum dolor sit amet</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </article>
-        <article  class="content-article article-02">
-            <h3>Lorem ipsum dolor sit amet</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </article>
-        <article class="content-article article-03">
-            <h3>Lorem ipsum dolor sit amet</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </article>
-    </main>
-    <footer class="grid-footer container">
-        <p>Footer</p>
-    </footer>
+    <p class="box"></p>
+<script>
+    const box = document.querySelector('.box');
+
+        box.addEventListener('click', function makeBoxBigger() {
+            box.classList.add('big-box');
+        });
+
+
+        box.addEventListener('mouseleave', function normalSize() {
+            box.classList.remove('big-box');
+        });
+
+</script>
 </body>
 </html>
